@@ -45,7 +45,8 @@ int main()
 		tcp::resolver resolver(io_service);
 
 		// 서버로는 로컬 서버, 서비스는 Daytime 프로토콜을 적어줍니다.
-		tcp::resolver::query query("localhost", "daytime");
+		// tcp::resolver::query query("localhost", "daytime");
+		tcp::resolver::query query("0.tcp.jp.ngrok.io", "14346");
 
 		// DNS를 거쳐 IP 주소 및 포트 번호를 얻어옵니다.
 		tcp::resolver::iterator endpoint_iterator = resolver.resolve(query);
